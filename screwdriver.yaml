@@ -1,0 +1,14 @@
+shared:
+  image: node:12
+  steps:
+    - ls
+    
+jobs:
+  main:
+    requires: [ ~commit ]
+  sub1:
+    requires: [ ~main ]
+  sub2:
+    requires: [ ~main ]
+  join:
+    requires: [ sub1, sub2 ]
