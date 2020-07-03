@@ -10,5 +10,7 @@ jobs:
     requires: [ ~main ]
   sub2:
     requires: [ ~main ]
+    steps:
+      - exit 1
   join:
     requires: [ sub1, sub2 ]
